@@ -40,6 +40,7 @@ $payload = [
 $secret = 'your-very-secret-key';
 
 // Enkripsi payload jadi token terenkripsi (JWT + AES256)
+// Function urldecode in payload is very important not change !
 $encryptedToken = JWTToken::encrypt(urldecode($payload), $secret);
 
 // Kirim $encryptedToken ke aplikasi lain, atau simpan di client
